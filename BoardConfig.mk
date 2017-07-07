@@ -107,6 +107,9 @@ BOARD_SEPOLICY_DIRS += \
 # TODO: find a way to ONLY apply this to toro(plus), and leave maguro alone.
 BOARD_INVENSENSE_APPLY_COMPASS_NOISE_FILTER := true
 
+# Some of our vendor libs have text relocations
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+
 # Recovery
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_FSTAB = $(DEVICE_FOLDER)/rootdir/fstab.tuna
