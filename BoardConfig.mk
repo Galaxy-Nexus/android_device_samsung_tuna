@@ -40,11 +40,16 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_INFO_FILE := $(DEVICE_FOLDER)/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := tuna
 
+# We're now a unified build, but this wasn't always the case.
+TARGET_OTA_ASSERT_DEVICE := tuna,,maguro,toro,toroplus
+
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=$(TARGET_BOOTLOADER_BOARD_NAME)
+BOARD_KERNEL_CMDLINE := androidboot.hardware=$(TARGET_BOOTLOADER_BOARD_NAME) androidboot.selinux=permissive
 TARGET_KERNEL_CONFIG := cyanogenmod_tuna_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/tuna
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.7/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 
 TI_CAMERAHAL_USES_LEGACY_DOMX_DCC := true
 TI_CAMERAHAL_INTERFACE := OMX
