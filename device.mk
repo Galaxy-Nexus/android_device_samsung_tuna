@@ -196,10 +196,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	camera.qcom.misc.disable=1
 
-# Themes
-PRODUCT_PACKAGES += \
-    HexoLibre
-
 # Disable VFR support for encoders
 PRODUCT_PROPERTY_OVERRIDES += \
 	debug.vfr.enable=0
